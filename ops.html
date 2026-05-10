@@ -15,7 +15,7 @@
       display: block;
       font-size: 22px;
       font-weight: 900;
-      color: var(--accent);
+      color: var(--ink);
       letter-spacing: -0.3px;
       margin-bottom: 6px;
     }
@@ -49,7 +49,7 @@
     .hero-tags-row .tag-outline,
     .hero-tags-row .tag-special-ops,
     .hero-tags-row .tag-special-design {
-      font-size: 12px;
+      font-size: 11px;
       padding: 4px 10px;
     }
 
@@ -57,12 +57,12 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      background: linear-gradient(135deg, #E84A7F, #E8674A);
-      color: white;
-      font-size: 12px;
+      background: rgba(232,74,127,0.12);
+      color: #E84A7F;
+      font-size: 11px;
       font-weight: 600;
       padding: 4px 10px;
-      border-radius: 30px;
+      border-radius: 6px;
     }
 
     .price-sticky {
@@ -142,6 +142,15 @@
       flex-shrink: 0;
       margin-top: 7px;
     }
+    .insight-item--more {
+      color: #999;
+      font-size: 12px;
+      font-style: italic;
+      padding-bottom: 0;
+    }
+    .insight-item--more::before {
+      background: #ccc;
+    }
 
     .highlight-card {
       background: var(--accent);
@@ -205,7 +214,7 @@
         <span class="tag-outline">内置模版文件</span>
         <span class="tag-outline">专属提效 AGENT</span>
         <span class="tag-outline">搭建图文教程</span>
-        <span class="tag-outline">1v1沟通</span></div>
+        <span class="tag-outline">支持一对一沟通</span></div>
     </div>
 
     <!-- 粘性价格条 -->
@@ -280,7 +289,7 @@
       <div class="feature-card">
         <div class="section-num">02</div>
         <div class="section-title">内置高频提效AGENT</div>
-        <p class="section-desc">包含多个通用提效agent——如周报撰写助手、每日推进助手、创作助手等，持续更新...</p>
+        <p class="section-desc">包含多个运营专属提效agent——如周报撰写助手、选题策划助手、活动方案助手、竞品分析助手等，持续更新...<br><span style="font-size:12px;color:var(--ink-muted);display:block;margin-top:8px">注：AGENT——可以按照你所设定的流程，每次都输出标准物料</span></p>
       </div>
 
       <!-- 03 + 04 -->
@@ -306,7 +315,7 @@
         </div>
         <div class="hc-item">
           <span class="hc-label">10个运营工作流</span>
-          <span class="hc-desc">周报 / 选题 / 文案 / 活动策划 / 数据复盘 / 竞品分析 / 述职 / 用研分析 / 私域话术 / 内容日历，打开触发就能用</span>
+          <span class="hc-desc">周报 / 选题 / 文案 / 活动策划 / 数据复盘 / 竞品分析 / 述职 / 用研分析 / 私域话术 / 内容日历，触发关键词就能用</span>
         </div>
         <div class="hc-item">
           <span class="hc-label">CONTENT.md 内容素材库</span>

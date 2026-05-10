@@ -137,16 +137,16 @@
     }
 
     .plan-feature-tag {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 400;
-      padding: 5px 11px;
-      border-radius: 20px;
+      padding: 4px 10px;
+      border-radius: 6px;
       background: #F5F0E8;
-      color: var(--ink);
+      color: var(--ink-light);
     }
 
     .plan-feature-tag.special {
-      color: white;
+      font-weight: 600;
     }
 
     .plan-cta {
@@ -182,9 +182,9 @@
     .plan-design .plan-label,
     .plan-design .plan-cta-text { color: #6B4AE8; }
 
-    .plan-general .plan-feature-tag.special { background: #E8674A; }
-    .plan-ops .plan-feature-tag.special { background: linear-gradient(135deg, #E84A7F, #E8674A); }
-    .plan-design .plan-feature-tag.special { background: linear-gradient(135deg, #6B4AE8, #4A7AE8); }
+    .plan-general .plan-feature-tag.special { background: rgba(232,103,74,0.12); color: #E8674A; }
+    .plan-ops .plan-feature-tag.special { background: rgba(232,74,127,0.12); color: #E84A7F; }
+    .plan-design .plan-feature-tag.special { background: rgba(107,74,232,0.12); color: #6B4AE8; }
 
     .plan-general .plan-arrow { background: #E8674A; }
     .plan-ops .plan-arrow { background: #E84A7F; }
@@ -195,11 +195,41 @@
       padding: 32px 16px 0;
     }
 
+    .compare-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding: 0 4px;
+    }
+
     .compare-title {
       font-size: 16px;
       font-weight: 700;
-      margin-bottom: 16px;
-      padding: 0 4px;
+      margin: 0;
+    }
+
+    .compare-switch {
+      display: flex;
+      gap: 4px;
+    }
+
+    .compare-switch-btn {
+      font-size: 12px;
+      font-family: inherit;
+      color: var(--ink-muted);
+      background: none;
+      border: none;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .compare-switch-btn.active {
+      color: var(--ink);
+      background: #E8E1D4;
+      font-weight: 600;
     }
 
     .compare-table-wrap {
@@ -248,6 +278,7 @@
 
     .compare tbody tr:last-child td { border-bottom: none; }
 
+    .ck-f { color: #888; font-weight: 700; font-size: 15px; }
     .ck-o { color: #E8674A; font-weight: 700; font-size: 15px; }
     .ck-p { color: #E84A7F; font-weight: 700; font-size: 15px; }
     .ck-d { color: #6B4AE8; font-weight: 700; font-size: 15px; }
@@ -303,7 +334,7 @@
             <span class="plan-feature-tag">内置模版文件</span>
             <span class="plan-feature-tag">多个提效AGENT</span>
             <span class="plan-feature-tag">搭建图文教程</span>
-            <span class="plan-feature-tag">1v1沟通</span>
+            <span class="plan-feature-tag">支持一对一沟通</span>
           </div>
           <div class="plan-cta">
             <div class="plan-arrow">❯</div>
@@ -330,7 +361,7 @@
             <span class="plan-feature-tag">内置模版文件</span>
             <span class="plan-feature-tag">专属提效AGENT</span>
             <span class="plan-feature-tag">搭建图文教程</span>
-            <span class="plan-feature-tag">1v1沟通</span>
+            <span class="plan-feature-tag">支持一对一沟通</span>
           </div>
           <div class="plan-cta">
             <div class="plan-arrow">❯</div>
@@ -357,7 +388,7 @@
             <span class="plan-feature-tag">内置模版文件</span>
             <span class="plan-feature-tag">专属提效AGENT</span>
             <span class="plan-feature-tag">搭建图文教程</span>
-            <span class="plan-feature-tag">1v1沟通</span>
+            <span class="plan-feature-tag">支持一对一沟通</span>
           </div>
           <div class="plan-cta">
             <div class="plan-arrow">❯</div>
@@ -369,65 +400,99 @@
 
     <!-- 对比表 -->
     <div class="compare-wrap">
-      <p class="compare-title">📋 三个版本功能对比</p>
+      <div class="compare-title-row">
+        <p class="compare-title">版本功能对比</p>
+        <div class="compare-switch">
+          <button class="compare-switch-btn active" id="btn-ops" onclick="switchSpecial('ops', this)">运营版</button>
+          <button class="compare-switch-btn" id="btn-design" onclick="switchSpecial('design', this)">设计版</button>
+        </div>
+      </div>
       <div class="compare-table-wrap">
         <table class="compare">
           <thead>
             <tr>
               <th style="text-align:left;padding-left:16px">功能</th>
-              <th style="color:#E8674A;text-align:center;padding-left:10px">通用¥19.9</th>
-              <th style="color:#E84A7F;text-align:center;padding-left:10px">运营¥59.9</th>
-              <th style="color:#6B4AE8;text-align:center;padding-left:10px">设计¥59.9</th>
+              <th style="color:#888;text-align:center">免费版</th>
+              <th style="color:#E8674A;text-align:center">通用¥19.9</th>
+              <th id="specialTh" style="color:#E84A7F;text-align:center">运营¥59.9</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>基础5文件体系<br><span style="color:#999;font-weight:400;font-size:11px">README · USER · SOUL · MEMORY · AGENTS</span></td>
+              <td><span class="ck-f">✓</span></td>
               <td><span class="ck-o">✓</span></td>
-              <td><span class="ck-p">✓</span></td>
-              <td><span class="ck-d">✓</span></td>
+              <td><span class="ck-special">✓</span></td>
             </tr>
             <tr>
               <td>工种专属USER.md</td>
               <td><span class="cross">—</span></td>
-              <td><span class="ck-p">✓</span></td>
-              <td><span class="ck-d">✓</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="ck-special">✓</span></td>
             </tr>
             <tr>
               <td>高频AGENT工作流</td>
+              <td>—</td>
               <td>5个</td>
-              <td>10个</td>
-              <td>9个</td>
+              <td class="special-agents"></td>
             </tr>
             <tr>
               <td>工种独有文件</td>
               <td><span class="cross">—</span></td>
-              <td><span class="ck-p">✓</span></td>
-              <td><span class="ck-d">✓</span></td>
+              <td><span class="cross">—</span></td>
+              <td><span class="ck-special">✓</span></td>
             </tr>
             <tr>
               <td>每日日志模版</td>
+              <td><span class="cross">—</span></td>
               <td><span class="ck-o">✓</span></td>
-              <td><span class="ck-p">✓</span></td>
-              <td><span class="ck-d">✓</span></td>
+              <td><span class="ck-special">✓</span></td>
             </tr>
             <tr>
               <td>教程配图</td>
+              <td><span class="cross">—</span></td>
               <td><span class="ck-o">✓</span></td>
-              <td><span class="ck-p">✓</span></td>
-              <td><span class="ck-d">✓</span></td>
+              <td><span class="ck-special">✓</span></td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
 
+    <script>
+      var specialData = {
+        ops:    { label: '运营版', color: '#E84A7F', ckClass: 'ck-p', agents: '10个' },
+        design: { label: '设计版', color: '#6B4AE8', ckClass: 'ck-d', agents: '9个' }
+      };
+
+      function switchSpecial(val, btn) {
+        var d = specialData[val];
+        // 更新表头
+        var th = document.getElementById('specialTh');
+        th.textContent = d.label;
+        th.style.color = d.color;
+        // 更新 ck-special 颜色
+        document.querySelectorAll('.ck-special').forEach(function(el) {
+          el.className = 'ck-special ' + d.ckClass;
+          el.textContent = '✓';
+        });
+        // 更新 agent 数量
+        document.querySelector('.special-agents').innerHTML = '<span>' + d.agents + '</span>';
+        // 更新按钮状态
+        document.querySelectorAll('.compare-switch-btn').forEach(function(b) { b.classList.remove('active'); });
+        if (btn) btn.classList.add('active');
+      }
+
+      // 初始化
+      switchSpecial('ops', document.getElementById('btn-ops'));
+    </script>
+
     <!-- Footer -->
     <div class="footer">
       <p>购买后永久可用 · 后续工作流更新免费同步<br>
       适用 IDE工具（Trae / Codex / Claude / Cursor 等）<br>
       及通用对话大模型（豆包 / DeepSeek / ChatGPT 等）<br>
-      有问题私信 @3C同学，当天回复</p>
+      有问题在小红书私信 "3C同学"</p>
     </div>
 
   </div>
