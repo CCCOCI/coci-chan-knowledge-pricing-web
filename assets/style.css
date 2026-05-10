@@ -1,0 +1,253 @@
+/* ══════════════════════════════════════
+   AI 知识库价目表 · 共享样式
+   ══════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F5F0E8;
+  --ink: #1A1A1A;
+  --ink-light: #666;
+  --ink-muted: #999;
+  --white: #ffffff;
+  --dark-card: #1E1E1E;
+
+  /* 品牌主色（每页覆写） */
+  --accent: #E8674A;
+  --accent-light: rgba(232, 103, 74, 0.12);
+
+  --radius-card: 20px;
+  --radius-tag: 6px;
+
+  font-family: 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── 顶部导航 Bar ── */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.top-bar .brand { font-size: 14px; font-weight: 500; color: var(--ink); }
+.top-bar .tagline { font-size: 12px; color: var(--ink-light); letter-spacing: 0.3px; }
+
+/* ── 通用按钮 ── */
+.btn-primary {
+  display: block;
+  background: #E8E1D4;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-secondary {
+  display: block;
+  background: #E8E1D4;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-light);
+  font-size: 14px;
+  text-decoration: none;
+  padding: 8px 0;
+}
+
+/* ── 标签 ── */
+.tag-accent {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: var(--radius-tag);
+  letter-spacing: 0.3px;
+}
+
+.tag-outline {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 30px;
+  border: 1.5px solid rgba(0,0,0,0.18);
+  white-space: nowrap;
+}
+
+.tag-special {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--accent);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 30px;
+}
+
+/* ── 文件卡片（黑底） ── */
+.file-card {
+  background: var(--dark-card);
+  border-radius: var(--radius-card);
+  padding: 24px 22px;
+  color: white;
+}
+
+.file-card .section-num {
+  font-size: 22px;
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.file-card .section-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.file-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.file-row:last-child { border-bottom: none; }
+
+.insight-item--more {
+  color: var(--ink-muted);
+  font-size: 12px;
+  font-style: italic;
+}
+.insight-item--more::before {
+  background: var(--ink-muted);
+}
+
+.file-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.file-dot {
+  width: 12px; height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.file-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+}
+
+.file-tag-special {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.file-desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  text-align: right;
+  max-width: 48%;
+}
+
+/* ── 功能卡片（白底） ── */
+.feature-card {
+  background: white;
+  border-radius: var(--radius-card);
+  padding: 22px 20px;
+}
+
+.feature-card .section-num {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--ink-muted);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.feature-card .section-title {
+  font-size: 19px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.feature-card .section-desc {
+  font-size: 13.5px;
+  color: var(--ink-light);
+  line-height: 1.6;
+}
+
+/* ── 二列网格 ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ── 分隔线 ── */
+.section-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 4px 0;
+}
+
+/* ── 响应式：平板/桌面 ── */
+@media (min-width: 640px) {
+  .top-bar { padding: 20px 24px; }
+  .page-content { max-width: 640px; margin: 0 auto; }
+}
+
+@media (min-width: 1024px) {
+  .page-content { max-width: 860px; }
+  .top-bar { max-width: 860px; margin: 0 auto; }
+}

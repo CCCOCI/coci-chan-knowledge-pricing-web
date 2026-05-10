@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>运营知识库模版 · Coci Chan</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    :root { --accent: #E84A7F; --accent-light: rgba(232,74,127,0.1); }
+
+    .detail-hero { padding: 16px 24px 20px; }
+    .back-row { margin-bottom: 12px; }
+
+    .version-tag {
+      display: block;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+
+    .hero-h1 {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .hero-h1 em { font-style: normal; color: var(--accent); }
+
+    .hero-line { display: none; }
+
+    .hero-sub-text {
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .hero-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    .hero-tags-row .tag-outline,
+    .hero-tags-row .tag-special-ops,
+    .hero-tags-row .tag-special-design {
+      font-size: 12px;
+      padding: 4px 10px;
+    }
+
+    .tag-special-ops {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: linear-gradient(135deg, #E84A7F, #E8674A);
+      color: white;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 30px;
+    }
+
+    .price-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price-sticky .price-big {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--accent);
+    }
+
+    .price-sticky .price-note { font-size: 12px; color: var(--ink-muted); }
+
+    .price-sticky .buy-btn {
+      background: var(--accent);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+
+    .detail-content {
+      padding: 0 16px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .dot-red    { background: #E84A7F; }
+    .dot-blue   { background: #4A90E8; }
+    .dot-green  { background: #4AE888; }
+    .dot-indigo { background: #6B7AE8; }
+    .dot-tan    { background: #C4A882; }
+    .dot-pink   { background: #E8674A; }
+    .dot-purple { background: #A84AE8; }
+
+    /* 差异化高亮卡 */
+    /* 洞察列表 */
+    .insight-card {
+      background: white;
+      border-radius: var(--radius-card);
+      padding: 22px 20px;
+    }
+    .insight-card .ic-title {
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .insight-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #444;
+      line-height: 1.55;
+      padding: 8px 0;
+      border-bottom: 1px solid #F5F0E8;
+    }
+    .insight-item:last-child { border-bottom: none; }
+    .insight-item::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    .highlight-card {
+      background: var(--accent);
+      color: white;
+      border-radius: var(--radius-card);
+      padding: 22px 20px;
+    }
+
+    .highlight-card .hc-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .highlight-card .hc-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      margin-bottom: 10px;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .highlight-card .hc-item::before {
+      content: '→';
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-content">
+
+    <!-- Nav -->
+    <div class="top-bar">
+      <span class="brand">Coci Chan</span>
+      <span class="tagline">///Build Your AI Memory System</span>
+    </div>
+
+    <!-- Hero -->
+    <div class="detail-hero">
+      <div class="back-row">
+        <a class="btn-back" href="index.html">← 返回价目表</a>
+      </div>
+      <div class="version-tag">运营知识库模版</div>
+      <div class="hero-tags-row">
+        <span class="tag-outline">内置模版文件</span>
+        <span class="tag-outline">专属提效 AGENT</span>
+        <span class="tag-outline">搭建图文教程</span>
+        <span class="tag-outline">1v1沟通</span>
+        <span class="tag-special-ops">✦ 专属内容文件</span></div>
+    </div>
+
+    <!-- 粘性价格条 -->
+    <div class="price-sticky">
+      <div>
+        <div class="price-big">¥59</div>
+        <div class="price-note">永久使用 · 更新免费</div>
+      </div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="detail-content">
+
+      <!-- 01 文件列表 -->
+      <div class="file-card">
+        <div class="section-num">01</div>
+        <div class="section-title">七个知识库文件</div>
+
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-red"></div>
+            <span class="file-name">README.md</span>
+          </div>
+          <span class="file-desc">// 上手说明，10分钟读完会用</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-blue"></div>
+            <span class="file-name">USER.md</span>
+          </div>
+          <span class="file-desc">// 告诉 AI 你是谁、你要什么</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-green"></div>
+            <span class="file-name">SOUL.md</span>
+          </div>
+          <span class="file-desc">// 定义 AI 的角色和性格</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-indigo"></div>
+            <span class="file-name">CONTENT<span class="file-tag-special">专属文件</span></span>
+          </div>
+          <span class="file-desc">// 让 AI 生成的内容始终符合你账号/品牌的调性</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-tan"></div>
+            <span class="file-name">MEMORY.md</span>
+          </div>
+          <span class="file-desc">// AI 的长期记忆存储</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-blue"></div>
+            <span class="file-name">AGENT.md</span>
+          </div>
+          <span class="file-desc">// 内置高频工作流程</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-pink"></div>
+            <span class="file-name">memory/日期.md</span>
+          </div>
+          <span class="file-desc">// 每日对话日志模版</span>
+        </div>
+      </div>
+
+      <!-- 02 AGENT -->
+      <div class="feature-card">
+        <div class="section-num">02</div>
+        <div class="section-title">内置高频提效AGENT</div>
+        <p class="section-desc">包含多个通用提效agent——如周报撰写助手、每日推进助手、创作助手等，持续更新...</p>
+      </div>
+
+      <!-- 03 + 04 -->
+      <div class="grid-2">
+        <div class="feature-card">
+          <div class="section-num">03</div>
+          <div class="section-title">图文教程</div>
+          <p class="section-desc">5 张图文教程，手把手带你搭完，不懂技术也能快速看懂</p>
+        </div>
+        <div class="feature-card">
+          <div class="section-num">04</div>
+          <div class="section-title">1v1咨询</div>
+          <p class="section-desc">可随时咨询搭建过程中遇到的问题，以及定制或升级套餐</p>
+        </div>
+      </div>
+
+      <!-- 运营版独有差异点 -->
+      <div class="highlight-card">
+        <div class="hc-title">✦ 运营版独有差异</div>
+        <div class="hc-item">运营专属 USER.md：平台/KPI/当前项目/汇报对象，AI 帮你写周报时直接对着 KPI 写</div>
+        <div class="hc-item">10个运营工作流：周报 / 选题 / 文案 / 活动策划 / 数据复盘 / 竞品分析 / 述职 / 用研分析 / 私域话术 / 内容日历，打开触发就能用</div>
+        <div class="hc-item">CONTENT.md 内容素材库：存你账号的内容规范、选题池、爆款规律，AI 写文案自动调用你的风格</div>
+      </div>
+
+      <!-- 运营洞见 -->
+      <div class="insight-card">
+        <div class="ic-title">预置 6 条运营实战洞见</div>
+        <div class="insight-item">筛选 vs 传播：搜索平台做的是「筛选」——1000个带需求搜索来的用户，价值可能超过10万个随机刷到的路人</div>
+        <div class="insight-item">用户审判三关口：信任关（为什么听你说）→ 关联关（这跟我有什么关系）→ 价值关（看完对我有什么用）</div>
+        <div class="insight-item">真实感是 AI 时代最稀缺的竞争力：不完美是建立连接的最短路径，也是现在最好的武器</div>
+        <div class="insight-item">免费内容的真正作用是「筛选」：内容越具体、越有门槛感，筛出来的用户质量越高</div>
+        <div class="insight-item">收藏驱动内容公式：关键词入标题 × 清单/模板形态 × 图片信息密度高——缺任一项效果显著下降</div>
+        <div class="insight-item">「做不到」三种原因：不知道从哪开始 / 做了不确定对不对 / 懒得自己搞——对应三种产品形态，定价依次递增</div>
+        <div class="insight-item insight-item--more">以上仅为预览，完整洞见体系已内置在知识库中，打开即用 ✦</div>
+      </div>
+
+      <a class="btn-primary" href="index.html">← 返回价目表</a>
+
+    </div>
+  </div>
+</body>
+</html>

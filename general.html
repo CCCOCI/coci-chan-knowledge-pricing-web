@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>通用知识库模版 · Coci Chan</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    :root { --accent: #E8674A; --accent-light: rgba(232,103,74,0.1); }
+
+    /* ── 概要页 Hero ── */
+    .detail-hero { padding: 16px 24px 20px; }
+    .back-row { margin-bottom: 12px; }
+
+    .version-tag {
+      display: block;
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.3px;
+      margin-bottom: 6px;
+    }
+
+    .hero-h1 {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-line {
+      display: none;
+    }
+
+    .hero-sub-text {
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .hero-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    .hero-tags-row .tag-outline,
+    .hero-tags-row .tag-special-ops,
+    .hero-tags-row .tag-special-design {
+      font-size: 12px;
+      padding: 4px 10px;
+    }
+
+    /* ── 价格粘性条 ── */
+    .price-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--bg);
+      
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price-sticky .price-big {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--accent);
+    }
+
+    .price-sticky .price-note { font-size: 12px; color: var(--ink-muted); }
+
+    .price-sticky .buy-btn {
+      background: var(--accent);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: none;
+    }
+
+    /* ── 内容区 ── */
+    .detail-content {
+      padding: 0 16px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* ── 文件颜色 ── */
+    .dot-red    { background: #E8674A; }
+    .dot-blue   { background: #4A90E8; }
+    .dot-green  { background: #4AE888; }
+    .dot-tan    { background: #C4A882; }
+    .dot-indigo { background: #6B7AE8; }
+    .dot-pink   { background: #E84A9E; }
+  </style>
+</head>
+<body>
+
+  <div class="page-content">
+
+    <!-- Nav -->
+    <div class="top-bar">
+      <span class="brand">Coci Chan</span>
+      <span class="tagline">///Build Your AI Memory System</span>
+    </div>
+
+    <!-- Hero -->
+    <div class="detail-hero">
+      <div class="back-row">
+        <a class="btn-back" href="index.html">← 返回价目表</a>
+      </div>
+      <div class="version-tag">通用知识库模版</div>
+      <div class="hero-tags-row">
+        <span class="tag-outline">内置模版文件</span>
+        <span class="tag-outline">多个提效AGENT</span>
+        <span class="tag-outline">搭建图文教程</span>
+        <span class="tag-outline">1v1沟通</span>
+      </div>
+    </div>
+
+    <!-- 粘性价格条 -->
+    <div class="price-sticky">
+      <div>
+        <div class="price-big">¥19.9</div>
+        <div class="price-note">永久使用 · 更新免费</div>
+      </div>
+    </div>
+
+    <!-- 内容卡片 -->
+    <div class="detail-content">
+
+      <!-- 01 文件列表 -->
+      <div class="file-card">
+        <div class="section-num">01</div>
+        <div class="section-title">六个知识库文件</div>
+
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-red"></div>
+            <span class="file-name">README.md</span>
+          </div>
+          <span class="file-desc">// 上手说明，10分钟读完会用</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-blue"></div>
+            <span class="file-name">USER.md</span>
+          </div>
+          <span class="file-desc">// 告诉 AI 你是谁、你要什么</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-green"></div>
+            <span class="file-name">SOUL.md</span>
+          </div>
+          <span class="file-desc">// 定义 AI 的角色和性格</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-tan"></div>
+            <span class="file-name">MEMORY.md</span>
+          </div>
+          <span class="file-desc">// AI 的长期记忆存储</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-indigo"></div>
+            <span class="file-name">AGENT.md</span>
+          </div>
+          <span class="file-desc">// 内置高频工作流程</span>
+        </div>
+        <div class="file-row">
+          <div class="file-left">
+            <div class="file-dot dot-pink"></div>
+            <span class="file-name">memory/日期.md</span>
+          </div>
+          <span class="file-desc">// 每日对话日志模版</span>
+        </div>
+      </div>
+
+      <!-- 02 AGENT -->
+      <div class="feature-card">
+        <div class="section-num">02</div>
+        <div class="section-title">内置高频提效AGENT</div>
+        <p class="section-desc">内置5个通用提效 AGENT：周报撰写 / 内容创作 / 信息整理 / 述职汇报 / 每日推进清单，持续更新...</p>
+      </div>
+
+      <!-- 03 + 04 网格 -->
+      <div class="grid-2">
+        <div class="feature-card">
+          <div class="section-num">03</div>
+          <div class="section-title">图文教程</div>
+          <p class="section-desc">5 张图文教程，手把手带你搭完，不懂技术也能快速看懂</p>
+        </div>
+        <div class="feature-card">
+          <div class="section-num">04</div>
+          <div class="section-title">1v1咨询</div>
+          <p class="section-desc">可随时咨询搭建过程中遇到的问题，以及定制或升级套餐</p>
+        </div>
+      </div>
+
+      <a class="btn-primary" href="index.html">← 返回价目表</a>
+
+    </div>
+  </div>
+</body>
+</html>

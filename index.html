@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 知识库模版 · Coci Chan</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ── 主页专属样式 ── */
+    .hero {
+      padding: 20px 24px 16px;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      color: var(--ink-light);
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #E8674A;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      color: var(--ink-light);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* ── 套餐卡片 ── */
+    .plans {
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .plan-card {
+      background: white;
+      border-radius: 22px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      position: relative;
+    }
+
+    .plan-card:active { transform: scale(0.98); }
+
+    .plan-card-inner {
+      padding: 24px 22px 22px;
+    }
+
+    .plan-color-bar {
+      height: 5px;
+      width: 100%;
+    }
+
+    .plan-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .plan-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .plan-title {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .plan-price {
+      text-align: right;
+    }
+
+    .plan-price .amount {
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+
+    .plan-price .unit {
+      font-size: 12px;
+      color: var(--ink-muted);
+      display: block;
+      margin-top: 2px;
+    }
+
+    .plan-desc {
+      font-size: 13.5px;
+      color: var(--ink-light);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .plan-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+
+    .plan-feature-tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 11px;
+      border-radius: 20px;
+      background: #F5F0E8;
+      color: var(--ink);
+    }
+
+    .plan-feature-tag.special {
+      color: white;
+    }
+
+    .plan-cta {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .plan-arrow {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+    }
+
+    /* 各版本主色 */
+    .plan-general { --c: #E8674A; }
+    .plan-ops     { --c: #E84A7F; }
+    .plan-design  { --c: #6B4AE8; }
+
+    .plan-general .plan-color-bar { background: #E8674A; }
+    .plan-ops     .plan-color-bar { background: #E84A7F; }
+    .plan-design  .plan-color-bar { background: #6B4AE8; }
+
+    .plan-general .plan-label,
+    .plan-general .plan-cta-text { color: #E8674A; }
+    .plan-ops .plan-label,
+    .plan-ops .plan-cta-text { color: #E84A7F; }
+    .plan-design .plan-label,
+    .plan-design .plan-cta-text { color: #6B4AE8; }
+
+    .plan-general .plan-feature-tag.special { background: #E8674A; }
+    .plan-ops .plan-feature-tag.special { background: #E84A7F; }
+    .plan-design .plan-feature-tag.special { background: #6B4AE8; }
+
+    .plan-general .plan-arrow { background: #E8674A; }
+    .plan-ops .plan-arrow { background: #E84A7F; }
+    .plan-design .plan-arrow { background: #6B4AE8; }
+
+    /* ── 对比表区 ── */
+    .compare-wrap {
+      padding: 32px 16px 0;
+    }
+
+    .compare-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      padding: 0 4px;
+    }
+
+    .compare-table-wrap {
+      background: white;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+    }
+
+    table.compare {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    .compare thead th {
+      padding: 12px 10px;
+      font-weight: 700;
+      font-size: 12px;
+      background: #E8E1D4;
+      color: var(--ink);
+      text-align: center;
+    }
+
+    .compare thead th:first-child {
+      color: var(--ink-light);
+    }
+
+    .compare thead th:first-child {
+      text-align: left;
+      padding-left: 16px;
+    }
+
+    .compare tbody td {
+      padding: 11px 10px;
+      text-align: center;
+      border-bottom: 1px solid #F5F0E8;
+      color: #555;
+    }
+
+    .compare tbody td:first-child {
+      text-align: left;
+      padding-left: 16px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .compare tbody tr:last-child td { border-bottom: none; }
+
+    .ck-o { color: #E8674A; font-weight: 700; font-size: 15px; }
+    .ck-p { color: #E84A7F; font-weight: 700; font-size: 15px; }
+    .ck-d { color: #6B4AE8; font-weight: 700; font-size: 15px; }
+    .cross { color: #ccc; font-size: 14px; }
+
+    /* ── 底部说明 ── */
+    .footer {
+      padding: 28px 24px 48px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: var(--ink-muted);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-content">
+
+    <!-- Nav -->
+    <div class="top-bar">
+      <span class="brand">Coci Chan</span>
+      <span class="tagline">///Build Your AI Memory System</span>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+      <p class="hero-eyebrow">AI 知识库模版</p>
+      <h1>让 AI 打开<br><em>始终都记住你</em></h1>
+      <p class="hero-sub">设计师整理 · 不用写代码 · 30分钟搭完 · 三种版本按工种精准适配</p>
+    </div>
+
+    <!-- Plans -->
+    <div class="plans">
+
+      <!-- 通用版 -->
+      <a class="plan-card plan-general" href="general.html">
+        <div class="plan-color-bar"></div>
+        <div class="plan-card-inner">
+          <div class="plan-top">
+            <div>
+              <div class="plan-label">通用版</div>
+              <div class="plan-title">通用知识库模版</div>
+            </div>
+            <div class="plan-price">
+              <span class="amount">¥19.9</span>
+              <span class="unit">永久使用</span>
+            </div>
+          </div>
+          <p class="plan-desc">完整5文件体系，适合所有职业的AI提效入门，打开就认识你。</p>
+          <div class="plan-features">
+            <span class="plan-feature-tag">内置模版文件</span>
+            <span class="plan-feature-tag">多个提效AGENT</span>
+            <span class="plan-feature-tag">搭建图文教程</span>
+            <span class="plan-feature-tag">1v1沟通</span>
+          </div>
+          <div class="plan-cta">
+            <div class="plan-arrow">›</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 运营版 -->
+      <a class="plan-card plan-ops" href="ops.html">
+        <div class="plan-color-bar"></div>
+        <div class="plan-card-inner">
+          <div class="plan-top">
+            <div>
+              <div class="plan-label">运营版</div>
+              <div class="plan-title">运营知识库模版</div>
+            </div>
+            <div class="plan-price">
+              <span class="amount">¥59</span>
+              <span class="unit">永久使用</span>
+            </div>
+          </div>
+          <p class="plan-desc">内容/活动/用户运营专属，10个工作流直接触发，含运营专属内容素材库。</p>
+          <div class="plan-features">
+            <span class="plan-feature-tag">内置模版文件</span>
+            <span class="plan-feature-tag">专属提效AGENT</span>
+            <span class="plan-feature-tag">搭建图文教程</span>
+            <span class="plan-feature-tag">1v1沟通</span>
+            <span class="plan-feature-tag special">✦ 专属内容文件</span>
+          </div>
+          <div class="plan-cta">
+            <div class="plan-arrow">›</div>
+          </div>
+        </div>
+      </a>
+
+      <!-- 设计版 -->
+      <a class="plan-card plan-design" href="design.html">
+        <div class="plan-color-bar"></div>
+        <div class="plan-card-inner">
+          <div class="plan-top">
+            <div>
+              <div class="plan-label">设计版</div>
+              <div class="plan-title">设计知识库模版</div>
+            </div>
+            <div class="plan-price">
+              <span class="amount">¥59</span>
+              <span class="unit">永久使用</span>
+            </div>
+          </div>
+          <p class="plan-desc">产品/交互/UI设计师专属，含13条真实项目验证的设计洞察与规范库。</p>
+          <div class="plan-features">
+            <span class="plan-feature-tag">内置模版文件</span>
+            <span class="plan-feature-tag">专属提效AGENT</span>
+            <span class="plan-feature-tag">搭建图文教程</span>
+            <span class="plan-feature-tag">1v1沟通</span>
+            <span class="plan-feature-tag special">✦ 专属内容文件</span>
+          </div>
+          <div class="plan-cta">
+            <div class="plan-arrow">›</div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- 对比表 -->
+    <div class="compare-wrap">
+      <p class="compare-title">📋 三个版本功能对比</p>
+      <div class="compare-table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding-left:16px">功能</th>
+              <th style="color:#E8674A;text-align:left;padding-left:10px">通用¥19.9</th>
+              <th style="color:#E84A7F;text-align:left;padding-left:10px">运营¥59</th>
+              <th style="color:#6B4AE8;text-align:left;padding-left:10px">设计¥59</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>基础5文件体系<br><span style="color:#999;font-weight:400;font-size:11px">README · USER · SOUL · MEMORY · AGENTS</span></td>
+              <td><span class="ck-o">✓</span></td>
+              <td><span class="ck-p">✓</span></td>
+              <td><span class="ck-d">✓</span></td>
+            </tr>
+            <tr>
+              <td>工种专属USER.md</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="ck-p">✓</span></td>
+              <td><span class="ck-d">✓</span></td>
+            </tr>
+            <tr>
+              <td>高频AGENT工作流</td>
+              <td>5个</td>
+              <td>10个</td>
+              <td>9个</td>
+            </tr>
+            <tr>
+              <td>工种独有文件</td>
+              <td><span class="cross">—</span></td>
+              <td><span class="ck-p">✓</span></td>
+              <td><span class="ck-d">✓</span></td>
+            </tr>
+            <tr>
+              <td>每日日志模版</td>
+              <td><span class="ck-o">✓</span></td>
+              <td><span class="ck-p">✓</span></td>
+              <td><span class="ck-d">✓</span></td>
+            </tr>
+            <tr>
+              <td>教程配图</td>
+              <td><span class="ck-o">✓</span></td>
+              <td><span class="ck-p">✓</span></td>
+              <td><span class="ck-d">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>购买后永久可用 · 后续工作流更新免费同步<br>
+      适用 CodeFlicker / Claude / ChatGPT / DeepSeek / Kimi / 豆包<br>
+      有问题私信 @3C同学，当天回复</p>
+    </div>
+
+  </div>
+</body>
+</html>
