@@ -146,6 +146,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
   padding: 13px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -194,13 +195,11 @@ body {
 }
 
 .file-desc {
-  font-size: 12px;
+  font-size: 11px;
   color: rgba(255,255,255,0.45);
   text-align: right;
-  max-width: 48%;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
 /* ── 功能卡片（白底） ── */
