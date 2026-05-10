@@ -18,7 +18,7 @@
   --accent: #E8674A;
   --accent-light: rgba(232, 103, 74, 0.12);
 
-  --radius-card: 20px;
+  --radius-card: 16px;
   --radius-tag: 6px;
 
   font-family: 'PingFang SC', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;
@@ -62,7 +62,10 @@ body {
 }
 
 .btn-secondary {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   background: #E8E1D4;
   color: var(--ink);
   font-size: 15px;
