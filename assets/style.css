@@ -191,7 +191,25 @@ body {
   padding: 2px 7px;
   border-radius: 4px;
   margin-left: 6px;
-  vertical-align: middle;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.file-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.file-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .file-desc {
