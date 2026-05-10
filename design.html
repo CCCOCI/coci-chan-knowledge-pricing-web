@@ -124,19 +124,30 @@
     }
 
     .highlight-card .hc-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
+      display: block;
       font-size: 14px;
-      margin-bottom: 10px;
-      line-height: 1.5;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      line-height: 1.6;
       color: rgba(255,255,255,0.9);
     }
 
-    .highlight-card .hc-item::before {
-      content: '→';
-      flex-shrink: 0;
+    .highlight-card .hc-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .highlight-card .hc-item .hc-label {
+      display: block;
+      font-size: 15px;
       font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .highlight-card .hc-item .hc-desc {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 400;
+      line-height: 1.6;
     }
 
     /* 洞察列表 */
@@ -291,21 +302,30 @@
       <!-- 设计版独有差异点 -->
       <div class="highlight-card">
         <div class="hc-title">✦ 设计版独有差异</div>
-        <div class="hc-item">设计专属 USER.md：设计方向/工具栈/协作对象/审美偏好，AI 帮你写提案时自动匹配你的设计语言</div>
-        <div class="hc-item">9个设计工作流：用研整理 / 设计提案 / 评审材料 / 体验自查 / 设计复盘 / 周报 / 体验分析 / 用研归因 / 述职，作者亲测真实可用</div>
-        <div class="hc-item">STYLE.md 设计规范库：组件/交互/视觉/内容四层规范，让 AI 生成的方案始终符合你的设计标准</div>
+        <div class="hc-item">
+          <span class="hc-label">设计专属 USER.md</span>
+          <span class="hc-desc">设计方向/工具栈/协作对象/审美偏好，AI 帮你写提案时自动匹配你的设计语言</span>
+        </div>
+        <div class="hc-item">
+          <span class="hc-label">9个设计工作流</span>
+          <span class="hc-desc">用研整理 / 设计提案 / 评审材料 / 体验自查 / 设计复盘 / 周报 / 体验分析 / 用研归因 / 述职，作者亲测真实可用</span>
+        </div>
+        <div class="hc-item">
+          <span class="hc-label">STYLE.md 设计规范库</span>
+          <span class="hc-desc">组件/交互/视觉/内容四层规范，让 AI 生成的方案始终符合你的设计标准</span>
+        </div>
       </div>
 
       <!-- 13条洞察 -->
       <div class="insight-card">
-        <div class="ic-title">预置 6 条真实设计洞察</div>
+        <div class="ic-title">预置真实设计洞见</div>
         <div class="insight-item">体验洞察路径方法：场景→角色→流程→卡点→优先级</div>
         <div class="insight-item">呈现模型 = 实现模型 × 心理模型</div>
         <div class="insight-item">设计减熵原则：如无必要，勿增实体</div>
         <div class="insight-item">Agentic AI 的体验设计哲学（线性体感 + 涌现能力）</div>
         <div class="insight-item">品牌感靠「控」不靠「画」</div>
         <div class="insight-item">B端产品体验设计的核心三件事</div>
-        <div class="insight-item insight-item--more">以上仅为预览，完整洞见体系已内置在知识库中，打开即用 ✦</div>
+        <div class="insight-item insight-item--more">以上仅为预览，知识库共预置 13 条真实设计洞察，打开即用 ✦</div>
       </div>
 
       <!-- 购买按钮 -->

@@ -157,19 +157,30 @@
     }
 
     .highlight-card .hc-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
+      display: block;
       font-size: 14px;
-      margin-bottom: 10px;
-      line-height: 1.5;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      line-height: 1.6;
       color: rgba(255,255,255,0.9);
     }
 
-    .highlight-card .hc-item::before {
-      content: '→';
-      flex-shrink: 0;
+    .highlight-card .hc-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .highlight-card .hc-item .hc-label {
+      display: block;
+      font-size: 15px;
       font-weight: 700;
+      color: white;
+      margin-bottom: 4px;
+    }
+
+    .highlight-card .hc-item .hc-desc {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 400;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -289,21 +300,30 @@
       <!-- 运营版独有差异点 -->
       <div class="highlight-card">
         <div class="hc-title">✦ 运营版独有差异</div>
-        <div class="hc-item">运营专属 USER.md：平台/KPI/当前项目/汇报对象，AI 帮你写周报时直接对着 KPI 写</div>
-        <div class="hc-item">10个运营工作流：周报 / 选题 / 文案 / 活动策划 / 数据复盘 / 竞品分析 / 述职 / 用研分析 / 私域话术 / 内容日历，打开触发就能用</div>
-        <div class="hc-item">CONTENT.md 内容素材库：存你账号的内容规范、选题池、爆款规律，AI 写文案自动调用你的风格</div>
+        <div class="hc-item">
+          <span class="hc-label">运营专属 USER.md</span>
+          <span class="hc-desc">平台/KPI/当前项目/汇报对象，AI 帮你写周报时直接对着 KPI 写</span>
+        </div>
+        <div class="hc-item">
+          <span class="hc-label">10个运营工作流</span>
+          <span class="hc-desc">周报 / 选题 / 文案 / 活动策划 / 数据复盘 / 竞品分析 / 述职 / 用研分析 / 私域话术 / 内容日历，打开触发就能用</span>
+        </div>
+        <div class="hc-item">
+          <span class="hc-label">CONTENT.md 内容素材库</span>
+          <span class="hc-desc">存你账号的内容规范、选题池、爆款规律，AI 写文案自动调用你的风格</span>
+        </div>
       </div>
 
       <!-- 运营洞见 -->
       <div class="insight-card">
-        <div class="ic-title">预置 6 条运营实战洞见</div>
-        <div class="insight-item">筛选 vs 传播：搜索平台做的是「筛选」——1000个带需求搜索来的用户，价值可能超过10万个随机刷到的路人</div>
-        <div class="insight-item">用户审判三关口：信任关（为什么听你说）→ 关联关（这跟我有什么关系）→ 价值关（看完对我有什么用）</div>
-        <div class="insight-item">真实感是 AI 时代最稀缺的竞争力：不完美是建立连接的最短路径，也是现在最好的武器</div>
-        <div class="insight-item">免费内容的真正作用是「筛选」：内容越具体、越有门槛感，筛出来的用户质量越高</div>
-        <div class="insight-item">收藏驱动内容公式：关键词入标题 × 清单/模板形态 × 图片信息密度高——缺任一项效果显著下降</div>
-        <div class="insight-item">「做不到」三种原因：不知道从哪开始 / 做了不确定对不对 / 懒得自己搞——对应三种产品形态，定价依次递增</div>
-        <div class="insight-item insight-item--more">以上仅为预览，完整洞见体系已内置在知识库中，打开即用 ✦</div>
+        <div class="ic-title">预置运营实战洞见</div>
+        <div class="insight-item">筛选 vs 传播：搜索平台做的是「筛选」</div>
+        <div class="insight-item">用户审判三关口：信任关 → 关联关 → 价值关</div>
+        <div class="insight-item">真实感是 AI 时代最稀缺的竞争力</div>
+        <div class="insight-item">免费内容的真正作用是「筛选」</div>
+        <div class="insight-item">收藏驱动内容公式：关键词 × 清单形态 × 高密度图片</div>
+        <div class="insight-item">「做不到」的三种原因与对应产品形态</div>
+        <div class="insight-item insight-item--more">以上仅为预览，知识库共预置 11 条运营实战洞见，打开即用 ✦</div>
       </div>
 
       <a class="btn-primary" href="index.html"><span style="font-size:18px;line-height:1">‹</span> 返回价目表</a>
