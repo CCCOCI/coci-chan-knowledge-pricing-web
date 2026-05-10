@@ -2,6 +2,8 @@
    AI 知识库价目表 · 共享样式
    ══════════════════════════════════════ */
 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -40,7 +42,7 @@ body {
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.top-bar .brand { font-size: 14px; font-weight: 500; color: var(--ink); }
+.top-bar .brand { font-size: 12px; font-weight: 500; color: var(--ink); display: inline-flex; align-items: center; gap: 6px; font-family: 'IBM Plex Mono', monospace; }
 .top-bar .tagline { font-size: 12px; color: var(--ink-light); letter-spacing: 0.3px; }
 
 /* ── 通用按钮 ── */
@@ -144,10 +146,9 @@ body {
 
 .file-row {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: baseline;
   justify-content: space-between;
-  gap: 4px 8px;
+  gap: 8px;
   padding: 13px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -167,6 +168,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 .file-dot {
@@ -181,6 +183,7 @@ body {
   color: white;
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
 }
 
 .file-tag-special {
@@ -196,28 +199,13 @@ body {
   flex-shrink: 0;
 }
 
-.file-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.file-name {
-  font-size: 15px;
-  font-weight: 600;
-  color: white;
-  display: inline-flex;
-  align-items: center;
-  white-space: nowrap;
-}
-
 .file-desc {
   font-size: 11px;
   color: rgba(255,255,255,0.45);
-  white-space: nowrap;
-  flex-shrink: 0;
-  margin-left: auto;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: right;
+  max-width: 55%;
 }
 
 /* ── 功能卡片（白底） ── */
@@ -259,6 +247,22 @@ body {
   height: 1px;
   background: rgba(0,0,0,0.08);
   margin: 4px 0;
+}
+
+/* ── sticky 版本标签 ── */
+.sticky-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.sticky-label.visible {
+  opacity: 1;
 }
 
 /* ── 响应式：平板/桌面 ── */

@@ -179,8 +179,8 @@
 
     <!-- Nav -->
     <div class="top-bar">
-      <span class="brand">Coci Chan</span>
-      <span class="tagline">///Build Your AI Memory System</span>
+      <span class="brand"><img src="assets/Frame.svg" width="20" height="20" alt="">Coci Chan</span>
+      
     </div>
 
     <!-- Hero -->
@@ -203,6 +203,7 @@
         <div class="price-big">¥59.9</div>
         <div class="price-note">永久使用 · 更新免费</div>
       </div>
+      <span class="sticky-label">运营知识库</span>
     </div>
 
     <!-- 内容卡片 -->
@@ -309,5 +310,13 @@
 
     </div>
   </div>
+  <script>
+    const label = document.querySelector('.sticky-label');
+    const hero = document.querySelector('.detail-hero');
+    window.addEventListener('scroll', () => {
+      const threshold = hero ? hero.offsetTop + hero.offsetHeight : 80;
+      label.classList.toggle('visible', window.scrollY > threshold);
+    });
+  </script>
 </body>
 </html>
