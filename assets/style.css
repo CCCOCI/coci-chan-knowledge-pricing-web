@@ -198,6 +198,9 @@ body {
   color: rgba(255,255,255,0.45);
   text-align: right;
   max-width: 48%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ── 功能卡片（白底） ── */
