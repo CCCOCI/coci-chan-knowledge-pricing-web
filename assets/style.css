@@ -200,8 +200,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-width: 55%;
-  flex: 1;
+  flex-shrink: 0;
 }
 
 .file-name {
@@ -216,9 +215,9 @@ body {
 .file-desc {
   font-size: 11px;
   color: rgba(255,255,255,0.45);
-  text-align: right;
   white-space: nowrap;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 /* ── 功能卡片（白底） ── */
